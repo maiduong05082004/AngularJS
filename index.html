@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script src="./node_modules/angular/angular.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body ng-app="myapp">
+    <div ng-controller="infoController">
+        <div class="mb-3">
+            <label for="formFile" class="form-label">{{allInfo}}</label>
+            <input class="form-control" type="text" id="formFile" value="{{name}}" disabled>
+        </div>
+        <div class="mb-3">
+            <label for="formFileMultiple" class="form-label">Tuổi</label>
+            <input class="form-control" type="text" id="formFileMultiple" disabled value="{{age}}">
+        </div>
+        <div class="mb-3">
+            <label for="formFileDisabled" class="form-label">Địa chỉ</label>
+            <input class="form-control" type="text" id="formFileDisabled" disabled value="{{address}}">
+        </div>
+        <div class="mb-3">
+            <label for="formFileSm" class="form-label">Trường đang học</label>
+            <input class="form-control form-control-sm" id="formFileSm" type="text" value="{{school}}" disabled>
+        </div>
+    </div>
+    <script>
+        function myFunc($scope) {
+            $scope.welcome = "hello Dương";
+            $scope.allInfo = "Thông tin cá nhân";
+            $scope.name = "Mai Đức Dương";
+            $scope.age = "19 tuổi";
+            $scope.address = "198 Lê Thánh Tông,Đông Vệ";
+            $scope.school = "Sinh viên trường cao đẳng FPT";
+
+            //đằng sau $scope. là biến mình khởi tạo
+            //để render ra view
+        }
+        var app = angular.module("myapp", []);
+        app.controller("infoController", myFunc);
+    </script>
+</body>
+
+</html>
